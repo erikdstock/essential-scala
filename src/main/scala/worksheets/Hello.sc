@@ -1,3 +1,3 @@
-object Hello {
+object Hello extends App {
   val hello = "Hello World"
 }

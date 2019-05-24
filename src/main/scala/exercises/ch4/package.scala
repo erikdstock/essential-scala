@@ -17,17 +17,62 @@ import scala.annotation.tailrec
 
 package object ch4 {
 
-//  case object Red extends TrafficLight
-//
-//  case object Yellow extends TrafficLight
-//
-//  case object Green extends TrafficLight
-//
-//  trait TrafficLight {
-//    def next: TrafficLight = this match {
-//      case Red => Green
-//      case Green => Yellow
-//      case Yellow => Red
-//    }
-//  }
+  sealed trait Calculation
+  final case class Success(result: Int) extends Calculation
+  final case class Failure(reason: String) extends Calculation
+
+  object Calculator {
+    def +(c: Calculation, x: Int): Calculation = c match {
+      case Success(result) => Success(result + x)
+      case f: Failure => f
+    }
+    def -(c: Calculation, x: Int): Calculation = c match {
+      case Success(result) => Success(result - x)
+      case f: Failure => f
+    }
+  }
+
+  sealed trait Tree {
+    def sum: Int = this match {
+      case Leaf(e) => e
+      case Node(l, r) => l.sum + r.sum
+    }
+
+    def double: Tree = this match {
+      case Leaf(e) => Leaf(e * 2)
+      case Node(l, r) => Node(l.double, r.double)
+    }
+  }
+
+  object Tree {
+
+    /*
+    * 1: Difference between defining methods in object vs trait? just style/semantics?
+    * 2: 'any non-tail recursion fn can be transformed into tail recursion by adding an accumulator. How here?
+    */
+//    @tailrec
+    def sum(tree: Tree): Int = {
+      def go(t: Tree, a: Int): Int = t match {
+        case Leaf(e) => e
+        case Node(l, r) => {
+          go(l, a) + go(r, a)
+        }
+      }
+      go(tree, 0)
+    }
+
+    def double(tree: Tree): Tree = tree match {
+      case Leaf(e) => Leaf(e*2)
+      case Node(l, r) => Node(double(l), double(r))
+    }
+  }
+
+  final case class Leaf(el: Int) extends Tree
+  final case class Node(l: Tree, r: Tree) extends Tree
+
+
+
+
+
+
 }

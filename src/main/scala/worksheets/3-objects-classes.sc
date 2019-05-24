@@ -29,7 +29,7 @@ Write two classes, Director and Film, with fields and methods as follows:
   a field imdbRating of type Double
   a field director of type Director
   a method directorsAge that returns the age of the director at the time of release
-  a method isDirectedBy that accepts a Director as a parameter and returns a Boolean”
+  a method isDirectedBy that accepts a Director as a parameter and returns a Boolean"
 
 
 */

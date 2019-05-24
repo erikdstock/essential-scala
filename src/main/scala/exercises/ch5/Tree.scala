@@ -8,4 +8,3 @@ final case class Leaf[A](el: A) extends Tree[A]
 
 final case class Node[A](l: Tree[A], r: Tree[A]) extends Tree[A]
 
-

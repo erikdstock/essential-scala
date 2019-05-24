@@ -1,5 +1,7 @@
 package exercises
 
+import scala.annotation.tailrec
+
 //
 //Here are the main points I picked out of this chapter and a few choice exercises. The meat of the chapter is in 4.5-6:
 //`4.{1-5}`: Sum types (`A` *is a* `B` *and* `C` *is a* `B`) and
@@ -12,7 +14,6 @@ package exercises
 //- `4.5.6.{1-2}`
 //- `4.6.3.2` (Trees)
 //- `4.7.0.2` implement JSON as structured data type - stretch goal, i think this is really poorly defined and difficult. Maybe a good thing to pair on with a partner during the week.
-//_*one caveat: the exercise about implementing `Pair` doesn’t work for me. I had to do it by spelling it `Pare` due to a conflict w/ the standard library i think*_
 
 package object ch4 {
 

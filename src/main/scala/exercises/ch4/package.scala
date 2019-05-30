@@ -50,7 +50,7 @@ package object ch4 {
     * 1: Difference between defining methods in object vs trait? just style/semantics?
     * 2: 'any non-tail recursion fn can be transformed into tail recursion by adding an accumulator. How here?
     */
-//    @tailrec
+   @tailrec
     def sum(tree: Tree): Int = {
       def go(t: Tree, a: Int): Int = t match {
         case Leaf(e) => e

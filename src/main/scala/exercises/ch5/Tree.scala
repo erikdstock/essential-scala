@@ -1,7 +1,7 @@
 package exercises.ch5
 
 sealed trait Tree[A] {
-//  def fold[B](???)(???) = ???
+  def fold[B](leaf: A => B)(node: (B, B) => B): B = ???
 }
 
 final case class Leaf[A](el: A) extends Tree[A]
@@ -14,5 +14,5 @@ object Tree {
     Node(Node(Leaf("is"), Leaf("human,")),
       Node(Leaf("to"), Node(Leaf("recurse"), Leaf("divine")))))
 
-  val foldedSolution = ???
+  val foldedSolution: String = ???
 }

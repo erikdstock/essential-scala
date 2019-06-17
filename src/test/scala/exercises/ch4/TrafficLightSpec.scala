@@ -58,7 +58,7 @@ Output:
 [info]     - must turn green
 [info]     when yellow
 [info]     - must turn red
-[info]     when greenb
+[info]     when green
 [info]     - must turn yellow
 [info] TrafficLightFunSpec:
 [info] TrafficLight

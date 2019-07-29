@@ -4,6 +4,7 @@
 class Cat(val name: String, val colour: String, val food: String) {
   override def toString = s"A $colour Cat named $name who likes $food"
 }
+
 val os = new Cat("Oswald", "Black", "milk")
 val he = new Cat("Henderson", "Ginger", "Chips")
 val qu = new Cat("Quentin", "Tabby and White", "Curry")

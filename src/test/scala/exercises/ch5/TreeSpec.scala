@@ -8,9 +8,6 @@ class TreeSpec extends SpecMixin {
     "have #fold" in {
       val tenTree = Node(Node(Leaf(1), Leaf(2)), Node(Leaf(3), Leaf(4)))
 
-//      val sum = (l, r) => {
-//        l + r
-//      }
 
       tenTree.fold[Int](a => a)((l, r) => l + r) shouldBe 10
       //

@@ -43,14 +43,13 @@ package object ch4 {
       case Node(l, r) => Node(l.double, r.double)
     }
   }
-
   object Tree {
 
     /*
     * 1: Difference between defining methods in object vs trait? just style/semantics?
     * 2: 'any non-tail recursion fn can be transformed into tail recursion by adding an accumulator. How here?
     */
-   @tailrec
+//    @tailrec
     def sum(tree: Tree): Int = {
       def go(t: Tree, a: Int): Int = t match {
         case Leaf(e) => e
@@ -65,6 +64,7 @@ package object ch4 {
       case Leaf(e) => Leaf(e*2)
       case Node(l, r) => Node(double(l), double(r))
     }
+
   }
 
   final case class Leaf(el: Int) extends Tree
